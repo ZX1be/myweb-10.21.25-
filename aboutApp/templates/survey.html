@@ -1,0 +1,37 @@
+{%extends "base.html"%}
+{%load static%}
+
+{%block title%}
+企业概况
+{%endblock%}
+
+{%block content%}
+<div class="container-fluid">
+    <div class = "row">
+        <img></img>
+    </div>
+</div>
+
+<div class = "container">
+    <div class = "row row-3">
+        <div class = "col-md-3">
+            <div class ="model-title">
+                公司简介
+            </div>
+            <div class ="model-list">
+                <ul class ="list-group">
+                    <li class="list-group-item" id="survey">
+                        <a href ="{% url 'aboutApp:survey'%}">企业概况</a>
+                    </li>
+                    <li class="list-group-item" id="honor">
+                        <a href ="{% url 'aboutApp:honor'%}">企业荣誉</a>
+                    </li>
+                </ui>
+            </div>
+        </div>
+        <!--说明文字和图片-->
+        <div class = "col-md-9">
+        </div>
+    </div>
+</div>
+{%endblock%}
