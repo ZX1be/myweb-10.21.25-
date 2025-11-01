@@ -13,7 +13,7 @@
 </div>
 
 <div class = "container">
-    <div class = "row row-3">
+    <div class = "row-3">
         <div class = "col-md-3">
             <div class ="model-title">
                 公司简介
@@ -26,12 +26,25 @@
                     <li class="list-group-item" id="honor">
                         <a href ="{% url 'aboutApp:honor'%}">企业荣誉</a>
                     </li>
-                </ui>
+                </ul>
             </div>
         </div>
         <!--说明文字和图片-->
         <div class = "col-md-9">
+            <div class= "model-details-title">
+                荣誉资质
+            </div>
+            <div class = "row">
+                {%for award in awards%}
+                <div class = "col-sm-6 col-md-4">
+                    <div class = "thumbnail">
+                        <img src ="{{award.photo.url}}">
+                    <div class="caption">
+                        <p>{{award.description}}</p>
+                    </div>
+                </div>
+            </div> 
+            {%endfor%}       
         </div>
-    </div>
 </div>
 {%endblock%}

@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from homeApp.views import home
 from django.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name='home'),
@@ -27,7 +29,8 @@ urlpatterns = [
     path('productsApp/',include('productsApp.urls')),
     path('scienceApp/',include('scienceApp.urls')),
     path('serviceApp/',include('serviceApp.urls')),
-
-
-
 ]
+
+if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL,
+                        document_root = settings.MEDIA_ROOT)
